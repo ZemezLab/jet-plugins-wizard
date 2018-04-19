@@ -1,0 +1,306 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: blank\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-21 16:46+0200\n"
+"PO-Revision-Date: 2017-04-21 16:46+0200\n"
+"Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
+"Language-Team: Cherry Team <support@cherryframework.com>\n"
+"Language: su\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;__;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: jet-plugins-wizard.php:253
+msgid "Cherry Plugin Wizard: Manifest file not found in current theme"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-data.php:59
+msgid "Plugins array are empty"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-extensions.php:152
+msgid "Recommended plugins"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:79
+msgid "You don't have permissions to do this"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:91
+msgid "No plugin to install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:114
+msgid "All plugins are installed. Redirecting to the next step..."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:142
+msgid "This plugin is not registered"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:246
+msgid "Action not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:262
+msgid "Plugin slug not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:283
+msgid "Installation failed"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:302
+msgid "Plugin data not provided"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-installer.php:319
+msgid "Can't perform plugin activation. Please try again later"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:76
+msgid "Plugin Installation Wizard"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:77
+msgid "Plugin Wizard"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:183
+msgid "No data found for installation"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:185
+msgid "Start install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:187
+msgid "Select skin and start install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:318
+msgid "PHP version"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:326
+msgid "Memory limit"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:334
+msgid "Max execution time"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:353
+#, php-format
+msgid "%1$s%2$s Recommended"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:357
+msgid "Ok"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:416
+msgid "Select Skin"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:420
+#: templates/wizard-notice.php:14
+msgid "Start Install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader-skin.php:50
+msgid "Details"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/manifest/jet-plugins-wizard-manifest.php:9
+msgid "Cherry Services List"
+msgstr ""
+
+#: includes/manifest/jet-plugins-wizard-manifest.php:15
+msgid "Cherry Data Importer"
+msgstr ""
+
+#: includes/manifest/jet-plugins-wizard-manifest.php:39
+msgid "Default"
+msgstr ""
+
+#: templates/dashboard/btn-activate.php:7
+msgid "Activate"
+msgstr ""
+
+#: templates/dashboard/btn-install.php:7
+msgid "Install"
+msgstr ""
+
+#: templates/plugin-item.php:8
+msgid "Install Plugin"
+msgstr ""
+
+#: templates/service-notice.php:6 templates/step-service-notice.php:6
+msgid "Installation Wizard"
+msgstr ""
+
+#: templates/skin-item.php:17 templates/step-configure-plugins.php:46
+msgid "Recommended Plugins"
+msgstr ""
+
+#: templates/skin-item.php:26
+msgid "View Demo"
+msgstr ""
+
+#: templates/step-after-install.php:6
+msgid "Congratulations"
+msgstr ""
+
+#: templates/step-after-install.php:7
+msgid "Install complete"
+msgstr ""
+
+#: templates/step-before-install.php:7
+msgid ""
+"Each skin comes with custom demo content and predefined set of plugins. "
+"Depending upon the selected skin the wizard will install required plugins "
+"and some demo posts and pages"
+msgstr ""
+
+#: templates/step-configure-plugins.php:6
+msgid "Configure plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:32
+msgid "Required Plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:33
+msgid ""
+"The minimum set of service plugins for your theme installation is set by "
+"default."
+msgstr ""
+
+#: templates/step-configure-plugins.php:47
+msgid ""
+"The recommended set of basic plugins to display the template’s pages. The "
+"best option for your site's future configuration. If you will not install "
+"one or more plugins from this list, the specific sections of the template, "
+"for which these plugins are responsible, will not be displayed."
+msgstr ""
+
+#: templates/step-configure-plugins.php:60
+msgid "Extra Plugins"
+msgstr ""
+
+#: templates/step-configure-plugins.php:61
+msgid ""
+"The full list of plugins available for a template installation is "
+"recommended if you want to get additional functionality to your theme."
+msgstr ""
+
+#: templates/step-configure-plugins.php:75 templates/step-select-type.php:49
+#: templates/step-service-notice.php:21
+msgid "Next"
+msgstr ""
+
+#: templates/step-install.php:6
+msgid "Install Plugins"
+msgstr ""
+
+#: templates/step-install.php:8
+msgid ""
+"Before demo data import a set of required plugins will be installed. Please "
+"be patient, this may take few minutes."
+msgstr ""
+
+#: templates/step-select-type.php:10
+msgid "Demo Content Settings"
+msgstr ""
+
+#: templates/step-select-type.php:12
+msgid ""
+"Each theme comes with lite and full version of demo content. The number of "
+"posts and plugins may affect your site speed. We recommend importing lite "
+"version of demo content if you are running shared inexpensive server."
+msgstr ""
+
+#: templates/step-select-type.php:20
+msgid "Lite Install"
+msgstr ""
+
+#: templates/step-select-type.php:23
+msgid ""
+"Lite version sample data includes the optimal amount of demo data with a "
+"smaller number of blog posts and images and fits for acquaintance with the "
+"template. It is recommended to install the Lite sample data version if you "
+"use an entry-level hosting plan."
+msgstr ""
+
+#: templates/step-select-type.php:31
+msgid "Full Install"
+msgstr ""
+
+#: templates/step-select-type.php:34
+msgid ""
+"Full version of sample data contains the entire amount of available demo "
+"data used in the template, including all posts, products, reviews, images "
+"and more. It is recommended to install a Full sample data version if you use "
+"premium hosting plans, dedicated or VPS servers."
+msgstr ""
+
+#: templates/step-service-notice.php:7
+msgid ""
+"Demo data import wizard will guide you through the process of demo content "
+"import and recommended plugins installation. Before gettings started make "
+"sure your server complies with"
+msgstr ""
+
+#: templates/step-service-notice.php:7
+msgid "WordPress minimal requirements."
+msgstr ""
+
+#: templates/step-service-notice.php:8
+msgid "Your system information:"
+msgstr ""
+
+#: templates/step-service-notice.php:15
+msgid ""
+"Not all of your server parameters met requirements. You can continue the "
+"installation process, but it will take more time and can probably drive to "
+"bugs."
+msgstr ""
+
+#: templates/wizard-notice.php:10
+#, php-format
+msgid ""
+"This wizard will help you to select skin, install plugins and import demo "
+"data for your %s theme. To start the install click the button below!"
+msgstr ""
+
+#: templates/wizard-notice.php:17
+msgid "Dismiss"
+msgstr ""
