@@ -9,9 +9,9 @@
 	</div>
 	<div class="wizard-plugin__actions"><?php
 		if ( true !== $data['installed'] ) {
-			cherry_plugin_wizard()->get_template( 'dashboard/btn-install.php' );
+			jet_plugins_wizard()->get_template( 'dashboard/btn-install.php' );
 		} elseif ( true === $data['installed'] && false === $data['activated'] ) {
-			cherry_plugin_wizard()->get_template( 'dashboard/btn-activate.php' );
+			jet_plugins_wizard()->get_template( 'dashboard/btn-activate.php' );
 		} elseif ( true === $data['installed'] && true === $data['activated'] ) {
 			echo '<span class="dashicons dashicons-yes"></span>';
 		}

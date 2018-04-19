@@ -3,8 +3,8 @@
  * Page footer template
  */
 ?>
-	<?php cherry_plugin_wizard()->get_template( 'select-type-popup.php' ); ?>
+	<?php jet_plugins_wizard()->get_template( 'select-type-popup.php' ); ?>
 	</div>
 </div>
 
-<?php do_action( 'cherry_plugin_wizard_main_after' ); ?>
+<?php do_action( 'jet_plugins_wizard_main_after' ); ?>

@@ -72,7 +72,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 				esc_html__( 'Plugins Installation Wizard', 'jet-plugins-wizard' ),
 				esc_html__( 'Plugins Wizard', 'jet-plugins-wizard' ),
 				'manage_options',
-				cherry_plugin_wizard()->slug(),
+				jet_plugins_wizard()->slug(),
 				array( $this, 'render_plugin_page' ),
 				'dashicons-flag',
 				75
@@ -87,9 +87,9 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		 */
 		public function render_plugin_page() {
 
-			cherry_plugin_wizard()->get_template( 'page-header.php' );
+			jet_plugins_wizard()->get_template( 'page-header.php' );
 			$this->dispatch();
-			cherry_plugin_wizard()->get_template( 'page-footer.php' );
+			jet_plugins_wizard()->get_template( 'page-footer.php' );
 		}
 
 		/**
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		 */
 		public function item_template() {
 
-			if ( empty( $_GET['page'] ) || cherry_plugin_wizard()->slug() !== $_GET['page'] ) {
+			if ( empty( $_GET['page'] ) || jet_plugins_wizard()->slug() !== $_GET['page'] ) {
 				return;
 			}
 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		public function get_item( $slug, $name ) {
 
 			ob_start();
-			$wizard_item = cherry_plugin_wizard()->get_template( 'plugin-item.php' );
+			$wizard_item = jet_plugins_wizard()->get_template( 'plugin-item.php' );
 			$item = ob_get_clean();
 
 			return sprintf( $item, $slug, $name, $this->get_loader() );
@@ -134,7 +134,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		 */
 		public function get_loader() {
 			ob_start();
-			cherry_plugin_wizard()->get_template( 'loader.php' );
+			jet_plugins_wizard()->get_template( 'loader.php' );
 			return ob_get_clean();
 		}
 
@@ -147,19 +147,19 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 
 			$step = ! empty( $_GET['step'] ) ? $_GET['step'] : 0;
 
-			$dispatch = array(
+			$dispatch = apply_filters( 'jet-plugins-wizard/steps', array(
 				'configure-plugins' => 'step-configure-plugins.php',
 				'0'                 => 'step-service-notice.php',
 				'1'                 => 'step-before-install.php',
 				'2'                 => 'step-select-type.php',
 				'3'                 => 'step-install.php',
 				'4'                 => 'step-after-install.php',
-			);
+			), $step );
 
 			do_action( 'jet-plugins-wizards/page-before' );
 
 			if ( isset( $dispatch[ $step ] ) ) {
-				cherry_plugin_wizard()->get_template( $dispatch[ $step ] );
+				jet_plugins_wizard()->get_template( $dispatch[ $step ] );
 			}
 
 			do_action( 'jet-plugins-wizards/page-after' );
@@ -303,7 +303,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		 *
 		 * @return string
 		 */
-		public function server_notice() {
+		public function server_notice( $when = 'always' ) {
 
 			$data = array(
 				array(
@@ -332,8 +332,9 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 				),
 			);
 
-			$format = '<li class="jet-plugins-wizard-server__item%5$s">%1$s: %2$s%3$s &mdash; <b>%4$s</b></li>';
-			$result = '';
+			$format     = '<li class="jet-plugins-wizard-server__item%5$s">%1$s: %2$s%3$s &mdash; <b>%4$s</b></li>';
+			$result     = '';
+			$has_errors = false;
 
 			foreach ( $data as $prop ) {
 
@@ -346,11 +347,14 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 				$compare = call_user_func( $prop['compare'], $val, $prop['rec'] );
 
 				if ( -1 === $compare ) {
-					$msg = sprintf( esc_html__( '%1$s%2$s Recommended', 'jet-plugins-wizard' ), $prop['rec'], $prop['units'] );
-					$scs = '';
+
+					$msg        = sprintf( esc_html__( '%1$s%2$s Recommended', 'jet-plugins-wizard' ), $prop['rec'], $prop['units'] );
+					$scs        = '';
+					$has_errors = true;
+
 					$this->set_wizard_errors( $prop['arg'] );
 				} else {
-					$msg     = esc_html__( 'Ok', 'jet-plugins-wizard' );
+					$msg = esc_html__( 'Ok', 'jet-plugins-wizard' );
 					$scs = ' check-success';
 				}
 
@@ -358,7 +362,18 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 
 			}
 
-			return sprintf( '<ul class="jet-plugins-wizard-server">%s</ul>', $result );
+			if ( 'always' === $when ) {
+				return sprintf( '<ul class="jet-plugins-wizard-server">%s</ul>', $result );
+			}
+
+			if ( 'errors' === $when && $has_errors ) {
+				$message = sprintf(
+					'<div class="jet-plugins-wizard-server-error">%1$s</div>',
+					__( 'Not all of your server parameters met requirements. You can continue the installation process, but it will take more time and can probably drive to bugs:', 'jet-plugins-wizard' )
+				);
+				return sprintf( '%2$s<ul class="jet-plugins-wizard-server">%1$s</ul>', $result, $message );
+			}
+
 		}
 
 		/**
@@ -408,7 +423,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 		 */
 		public function get_install_skin_button( $skin = '' ) {
 
-			$url    = cherry_plugin_wizard()->get_page_link( array( 'step' => 2, 'skin' => $skin ) );
+			$url    = jet_plugins_wizard()->get_page_link( array( 'step' => 2, 'skin' => $skin ) );
 			$label  = esc_html__( 'Select Skin', 'jet-plugins-wizard' );
 			$format = '<a href="%1$s" data-loader="true" class="btn btn-primary"><span class="text">%2$s</span><span class="jet-plugins-wizard-loader"><span class="jet-plugins-wizard-loader__spinner"></span></span></a>';
 
@@ -418,7 +433,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 
 			if ( jet_plugins_wizard_data()->is_single_type_skin( $skin ) ) {
 				$next_step = isset( $_GET['advanced-install'] ) && '1' === $_GET['advanced-install'] ? 'configure-plugins' : 3;
-				$url = cherry_plugin_wizard()->get_page_link( array( 'step' => $next_step, 'skin' => $skin, 'type' => 'full' ) );
+				$url = jet_plugins_wizard()->get_page_link( array( 'step' => $next_step, 'skin' => $skin, 'type' => 'full' ) );
 			}
 
 			return sprintf( $format, $url, $label );

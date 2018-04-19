@@ -10,7 +10,9 @@
 			showPlugins: '.jet-plugins-wizard-skin-item__plugins-title',
 			loaderBtn: '[data-loader="true"]',
 			start: '.start-install',
-			storePlugins: '.store-plugins'
+			storePlugins: '.store-plugins',
+			activateLicense: '.jet-plugins-wizard-activate-license',
+			licenseInput: '.jet-plugins-wizard-input',
 		},
 
 		vars: {
@@ -31,13 +33,60 @@
 				.on( 'click.JetPluginsWizrad', self.css.showResults, self.showResults )
 				.on( 'click.JetPluginsWizrad', self.css.showPlugins, self.showPlugins )
 				.on( 'click.JetPluginsWizrad', self.css.storePlugins, self.storePlugins )
-				.on( 'click.JetPluginsWizrad', self.css.loaderBtn, self.showLoader );
+				.on( 'click.JetPluginsWizrad', self.css.activateLicense, self.activateLicense )
+				.on( 'click.JetPluginsWizrad', self.css.loaderBtn, self.showLoader )
+				.on( 'focus.JetPluginsWizrad', self.css.licenseInput, self.clearLicenseErrors );
 
 			if ( undefined !== settings.firstPlugin ) {
 				self.vars.template = wp.template( 'wizard-item' );
 				settings.firstPlugin.isFirst = true;
 				self.installPlugin( settings.firstPlugin );
 			}
+		},
+
+		activateLicense: function() {
+
+			event.preventDefault();
+
+			var $this   = $( this ),
+				$form   = $this.closest( '.jet-plugins-wizard-license-form' ),
+				$input  = $form.find( '.jet-plugins-wizard-input' ),
+				license = $input.val();
+
+			$( '.jet-plugins-wizard-license-errors' ).html( '' );
+
+			if ( ! license ) {
+
+				$( '.jet-plugins-wizard-license-errors' ).html( settings.license.empty );
+
+				setTimeout( function() {
+					$this.removeClass( 'in-progress' );
+				}, 10 );
+
+				return false;
+			}
+
+			$.ajax({
+				url: ajaxurl,
+				type: 'get',
+				dataType: 'json',
+				data: {
+					action: 'jet_plugins_wizard_activate_license',
+					license: license
+				}
+			}).done( function( response ) {
+				if ( true === response.success ) {
+					$form.replaceWith( response.data.replaceWith );
+				} else {
+					$this.removeClass( 'in-progress' );
+					$( '.jet-plugins-wizard-license-errors' ).html( response.data.errorMessage );
+				}
+			});
+
+		},
+
+		clearLicenseErrors: function() {
+			$( '.jet-plugins-wizard-license-errors' ).html( '' );
 		},
 
 		storePlugins: function() {

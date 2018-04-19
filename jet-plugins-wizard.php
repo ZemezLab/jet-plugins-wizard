@@ -99,6 +99,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 		 */
 		public function preload() {
 			require_once $this->path( 'includes/class-jet-plugins-wizard-settings.php' );
+			require_once $this->path( 'includes/class-jet-plugins-wizard-license.php' );
 			require_once $this->path( 'includes/class-jet-plugins-wizard-data.php' );
 			require_once $this->path( 'includes/class-jet-plugins-wizard-extensions.php' );
 		}
@@ -162,6 +163,8 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 			}
 
 			add_action( 'admin_notices', array( $this, 'wizard_notice' ) );
+
+			jet_plugins_wizard_license();
 
 			$this->load();
 		}

@@ -38,7 +38,7 @@ $next_step = isset( $_GET['advanced-install'] ) && '1' === $_GET['advanced-insta
 	</div>
 	<input type="hidden" name="step" value="<?php echo $next_step; ?>">
 	<input type="hidden" name="skin" value="<?php echo $skin; ?>">
-	<input type="hidden" name="page" value="<?php echo cherry_plugin_wizard()->slug(); ?>">
+	<input type="hidden" name="page" value="<?php echo jet_plugins_wizard()->slug(); ?>">
 	<?php
 		if ( isset( $_GET['advanced-install'] ) ) {
 			$install = esc_attr( $_GET['advanced-install'] );

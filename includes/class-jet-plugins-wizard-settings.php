@@ -108,6 +108,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 			$settings = $this->external_settings;
 
 			$this->all_settings = array(
+				'license' => isset( $settings['license'] ) ? $settings['license'] : $this->get_defaults( 'license' ),
 				'plugins' => isset( $settings['plugins'] ) ? $settings['plugins'] : $this->get_defaults( 'plugins' ),
 				'skins'   => isset( $settings['skins'] )   ? $settings['skins']   : $this->get_defaults( 'skins' ),
 				'texts'   => isset( $settings['texts'] )   ? $settings['texts']   : $this->get_defaults( 'texts' ),
@@ -125,9 +126,10 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		public function get_defaults( $part = null ) {
 
 			if ( null === $this->defaults ) {
-				include cherry_plugin_wizard()->path( 'includes/config/default-config.php' );
+				include jet_plugins_wizard()->path( 'includes/config/default-config.php' );
 
 				$this->defaults = array(
+					'license' => $license,
 					'plugins' => $plugins,
 					'skins'   => $skins,
 					'texts'   => $texts,

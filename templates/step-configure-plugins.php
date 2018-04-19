@@ -33,7 +33,7 @@
 		echo '<div class="plugins-set__desc">' . esc_html__( 'The minimum set of service plugins for your theme installation is set by default.', 'jet-plugins-wizard' ) . '</div>';
 
 		foreach ( $required_plugins as $slug => $plugin_data ) {
-			cherry_plugin_wizard()->get_template( 'configure-plugins/item.php', array_merge(
+			jet_plugins_wizard()->get_template( 'configure-plugins/item.php', array_merge(
 				array( 'slug' => $slug ),
 				$plugin_data
 			) );
@@ -47,7 +47,7 @@
 		echo '<div class="plugins-set__desc">' . esc_html__( 'The recommended set of basic plugins to display the template’s pages. The best option for your site\'s future configuration. If you will not install one or more plugins from this list, the specific sections of the template, for which these plugins are responsible, will not be displayed.', 'jet-plugins-wizard' ) . '</div>';
 
 		foreach ( $recommended_plugins as $slug => $plugin_data ) {
-			cherry_plugin_wizard()->get_template( 'configure-plugins/item.php', array_merge(
+			jet_plugins_wizard()->get_template( 'configure-plugins/item.php', array_merge(
 				array( 'slug' => $slug ),
 				$plugin_data
 			) );
@@ -61,7 +61,7 @@
 		echo '<div class="plugins-set__desc">' . esc_html__( 'The full list of plugins available for a template installation is recommended if you want to get additional functionality to your theme.', 'jet-plugins-wizard' ) . '</div>';
 
 		foreach ( $rest_plugins as $slug => $plugin_data ) {
-			cherry_plugin_wizard()->get_template( 'configure-plugins/item.php', array_merge(
+			jet_plugins_wizard()->get_template( 'configure-plugins/item.php', array_merge(
 				array( 'slug' => $slug ),
 				$plugin_data
 			) );
@@ -71,7 +71,7 @@
 ?>
 </div>
 
-<a href="<?php echo cherry_plugin_wizard()->get_page_link( array( 'step' => 3 ) ); ?>" data-loader="true" class="btn btn-primary store-plugins">
+<a href="<?php echo jet_plugins_wizard()->get_page_link( array( 'step' => 3 ) ); ?>" data-loader="true" class="btn btn-primary store-plugins">
 	<span class="text"><?php esc_html_e( 'Next', 'jet-plugins-wizard' ); ?></span>
 	<span class="jet-plugins-wizard-loader"><span class="jet-plugins-wizard-loader__spinner"></span></span>
 </a>

@@ -12,7 +12,7 @@
 
 		foreach ( $skins as $skin => $skin_data ) {
 			jet_plugin_wizard_interface()->the_skin( $skin, $skin_data );
-			cherry_plugin_wizard()->get_template( 'skin-item.php' );
+			jet_plugins_wizard()->get_template( 'skin-item.php' );
 		}
 
 	}

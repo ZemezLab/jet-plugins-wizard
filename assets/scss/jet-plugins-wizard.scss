@@ -260,8 +260,25 @@
 			}
 		}
 	}
+
 	&-advanced-install {
 		padding: 0 0 36px;
+	}
+
+	input[type="text"] {
+		padding: 15px 20px;
+		border: none;
+		border-radius: 2px;
+		background: #f1f1f1;
+		line-height: 20px;
+		height: 50px;
+	}
+	&-license-form {
+		input[type="text"] {
+			height: 49px;
+			width: 300px;
+			margin: 0 15px 0 0;
+		}
 	}
 }
 
