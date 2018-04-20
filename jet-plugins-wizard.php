@@ -79,7 +79,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 				return;
 			}
 
-			add_action( 'after_setup_theme',     array( $this, 'preload' ) );
+			add_action( 'after_setup_theme',     array( $this, 'preload' ), 0 );
 			add_action( 'plugins_loaded',        array( $this, 'lang' ), 2 );
 			add_action( 'init',                  array( $this, 'init' ) );
 			add_action( 'admin_init',            array( $this, 'dismiss_notice' ) );

@@ -452,6 +452,23 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Installer' ) ) {
 				case 'remote':
 					$result = ! empty( $plugin['path'] ) ? esc_url( $plugin['path'] ) : false;
 					break;
+
+				case 'crocoblock':
+
+					if ( jet_plugins_wizard_license()->is_enabled() ) {
+						$api_url = jet_plugins_wizard_settings()->get( array( 'license', 'server' ) );
+						$result  = add_query_arg(
+							array(
+								'ct_api_action' => 'get_plugin',
+								'license'       => jet_plugins_wizard_license()->get_license(),
+								'url'           => urlencode( home_url( '/' ) ),
+								'slug'          => $plugin['slug'],
+							),
+							$api_url
+						);
+					}
+
+					break;
 			}
 
 			return $result;

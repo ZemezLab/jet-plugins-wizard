@@ -107,14 +107,80 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 
 			$settings = $this->external_settings;
 
-			$this->all_settings = array(
+			$all_settings = array(
 				'license' => isset( $settings['license'] ) ? $settings['license'] : $this->get_defaults( 'license' ),
 				'plugins' => isset( $settings['plugins'] ) ? $settings['plugins'] : $this->get_defaults( 'plugins' ),
 				'skins'   => isset( $settings['skins'] )   ? $settings['skins']   : $this->get_defaults( 'skins' ),
 				'texts'   => isset( $settings['texts'] )   ? $settings['texts']   : $this->get_defaults( 'texts' ),
 			);
 
+			$this->clear_transient_data();
+			$this->all_settings = $this->maybe_update_remote_data( $all_settings );
+
 			return $this->all_settings;
+		}
+
+		/**
+		 * Maybe update remote settings data
+		 *
+		 * @param  array $settings Plugins settings
+		 * @return array
+		 */
+		public function maybe_update_remote_data( $settings ) {
+
+			if ( ! empty( $settings['plugins']['get_from'] ) ) {
+				$settings['plugins'] = $this->get_remote_data( $settings['plugins']['get_from'], 'jet_wizard_plugins' );
+			}
+
+			if ( ! empty( $settings['skins']['get_from'] ) ) {
+				$settings['skins'] = $this->get_remote_data( $settings['skins']['get_from'], 'jet_wizard_skins' );
+			}
+
+			return $settings;
+
+		}
+
+		/**
+		 * Get remote data for wizard
+		 *
+		 * @param  [type] $url           [description]
+		 * @param  [type] $transient_key [description]
+		 * @return [type]                [description]
+		 */
+		public function get_remote_data( $url, $transient_key ) {
+
+			$data = get_site_transient( $transient_key );
+
+			if ( ! $data ) {
+
+				$response = wp_remote_get( $url, array(
+					'timeout'   => 60,
+					'sslverify' => false,
+				) );
+
+				$data = wp_remote_retrieve_body( $response );
+				$data = json_decode( $data, true );
+
+				if ( empty( $data ) ) {
+					$data = array();
+				}
+
+				set_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+
+			}
+
+			return $data;
+
+		}
+
+		/**
+		 * Clear transien data cahces
+		 *
+		 * @return [type] [description]
+		 */
+		public function clear_transient_data() {
+			set_site_transient( 'jet_wizard_plugins', null );
+			set_site_transient( 'jet_wizard_skins', null );
 		}
 
 		/**

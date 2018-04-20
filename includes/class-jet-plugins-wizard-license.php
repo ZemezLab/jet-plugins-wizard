@@ -57,6 +57,15 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_License' ) ) {
 		}
 
 		/**
+		 * Retuirn license
+		 *
+		 * @return [type] [description]
+		 */
+		public function get_license() {
+			return get_option( $this->license_option );
+		}
+
+		/**
 		 * Check if license is already active
 		 *
 		 * @return boolean
