@@ -3,7 +3,7 @@
  * Template part for displaying advanced popup
  */
 
-$skin      = jet_plugin_wizard_interface()->get_skin_data( 'slug' );
+$skin      = jet_plugins_wizard_interface()->get_skin_data( 'slug' );
 $next_step = isset( $_GET['advanced-install'] ) && '1' === $_GET['advanced-install'] ? 'configure-plugins' : 3;
 
 ?>

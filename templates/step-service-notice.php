@@ -6,7 +6,7 @@
 <h2><?php esc_html_e( 'Installation Wizard', 'jet-plugins-wizard' ); ?></h2>
 <div class="jet-plugins-wizard-msg"><?php esc_html_e( 'Demo data import wizard will guide you through the process of demo content import and recommended plugins installation. Before gettings started make sure your server complies with', 'jet-plugins-wizard' ); ?> <b><?php esc_html_e( 'WordPress minimal requirements.', 'jet-plugins-wizard' ); ?></b></div>
 <h4><?php esc_html_e( 'Your system information:', 'jet-plugins-wizard' ); ?></h4>
-<?php echo jet_plugin_wizard_interface()->server_notice(); ?>
+<?php echo jet_plugins_wizard_interface()->server_notice(); ?>
 <?php
 	$errors = wp_cache_get( 'errors', 'jet-plugins-wizard' );
 	if ( $errors ) {

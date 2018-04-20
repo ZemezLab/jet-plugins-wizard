@@ -462,8 +462,8 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
  *
  * @return object
  */
-function jet_plugin_wizard_interface() {
+function jet_plugins_wizard_interface() {
 	return Jet_Plugins_Wizard_Interface::get_instance();
 }
 
-jet_plugin_wizard_interface();
+jet_plugins_wizard_interface();
