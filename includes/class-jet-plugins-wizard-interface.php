@@ -309,7 +309,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Interface' ) ) {
 				array(
 					'arg'     => null,
 					'_cb'     => 'phpversion',
-					'rec'     => '5.3',
+					'rec'     => '5.4',
 					'units'   => null,
 					'name'    => esc_html__( 'PHP version', 'jet-plugins-wizard' ),
 					'compare' => 'version_compare',
