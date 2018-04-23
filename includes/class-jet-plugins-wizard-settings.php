@@ -114,7 +114,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 				'texts'   => isset( $settings['texts'] )   ? $settings['texts']   : $this->get_defaults( 'texts' ),
 			);
 
-			$this->clear_transient_data();
 			$this->all_settings = $this->maybe_update_remote_data( $all_settings );
 
 			return $this->all_settings;
@@ -165,7 +164,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 					$data = array();
 				}
 
-				set_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+				set_site_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
 
 			}
 

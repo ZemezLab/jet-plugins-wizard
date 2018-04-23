@@ -115,7 +115,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_License' ) ) {
 
 			$url = add_query_arg(
 				array(
-					'edd_action' => 'activate_license',
+					'edd_action' => $action,
 					'item_id'    => $item_id,
 					'license'    => $license,
 					'url'        => urlencode( home_url( '/' ) ),
