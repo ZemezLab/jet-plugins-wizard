@@ -205,7 +205,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Installer' ) ) {
 			$skins   = jet_plugins_wizard_settings()->get( array( 'skins' ) );
 			$plugins = isset( $skins['advanced'][ $skin ][ $type ] ) ? $skins['advanced'][ $skin ][ $type ] : array();
 			$active  = get_option( 'active_plugins' );
-			$plugins = apply_filters( 'jet-plugins-wizard/deactivate-skin-plugins', $plugins, $kin );
+			$plugins = apply_filters( 'jet-plugins-wizard/deactivate-skin-plugins', $plugins, $skin );
 
 			if ( ! $plugins ) {
 				return;
