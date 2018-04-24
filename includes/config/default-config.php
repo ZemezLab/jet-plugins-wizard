@@ -2,7 +2,7 @@
 
 $license = array(
 	'enabled' => true,
-	'server'  => 'http://192.168.9.40/_2018/04_April/crocoblock-api/',
+	'server'  => 'https://account.crocoblock.com/',
 	'item_id' => 9,
 );
 
@@ -28,7 +28,7 @@ $license = array(
  * @var array
  */
 $plugins = array(
-	'get_from' => 'http://192.168.9.40/_2018/04_April/crocoblock-api/wp-content/uploads/static/wizard-plugins.json',
+	'get_from' => 'https://account.crocoblock.com/wp-content/uploads/static/wizard-plugins.json',
 );
 
 /**
@@ -54,7 +54,7 @@ $plugins = array(
  * @var array
  */
 $skins = array(
-	'get_from' => 'http://192.168.9.40/_2018/04_April/crocoblock-api/wp-content/uploads/static/wizard-skins.json',
+	'get_from' => 'https://account.crocoblock.com/wp-content/uploads/static/wizard-skins.json',
 );
 
 /**
