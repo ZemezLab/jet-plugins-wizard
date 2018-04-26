@@ -302,8 +302,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 * @return boolean
 		 */
 		public function is_single_type_skin( $skin = '' ) {
-			$skin_data = jet_plugins_wizard_settings()->get( array( 'skins', 'advanced', $skin ) );
-			return empty( $skin_data['lite'] );
+			return true;
 		}
 
 		/**
