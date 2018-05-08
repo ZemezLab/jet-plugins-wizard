@@ -157,11 +157,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 		 */
 		public function init() {
 
-			if ( ! jet_plugins_wizard_settings()->get_all_settings() ) {
-				add_action( 'admin_notices', array( $this, 'manifest_notice' ) );
-				return;
-			}
-
 			add_action( 'admin_notices', array( $this, 'wizard_notice' ) );
 
 			jet_plugins_wizard_license();
@@ -236,17 +231,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 			}
 
 			return add_query_arg( $args, esc_url( admin_url( 'admin.php' ) ) );
-		}
-
-		/**
-		 * Show warnong notice if manifest file not exists in theme
-		 *
-		 * @return void
-		 */
-		public function manifest_notice() {
-			echo '<div class="notice notice-warning is-dismissible"><p>';
-			esc_html_e( 'Jet Plugin Wizard: Configuration not found in current theme', 'jet-plugins-wizard' );
-			echo '</p></div>';
 		}
 
 		/**

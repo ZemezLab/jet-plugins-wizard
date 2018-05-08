@@ -101,10 +101,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 				return $this->all_settings;
 			}
 
-			if ( empty( $this->external_settings ) ) {
-				return false;
-			}
-
 			$settings = $this->external_settings;
 
 			$all_settings = array(
