@@ -45,15 +45,23 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 
 			add_filter( 'jet-plugins-wizard/send-install-data', array( $this, 'add_multi_arg' ), 10, 2 );
 
-			if ( jet_plugins_wizard_settings()->get_all_settings() ) {
-				add_filter( 'ttw_success_redirect_url', array( $this, 'set_theme_wizard_success_redirect' ) );
-			}
-
+			add_action( 'init', array( $this, 'set_success_redirect_for_theme_wizard' ) );
 			add_action( 'tm_dashboard_add_section', array( $this, 'add_dashboard_plugins_section' ), 25, 2 );
 			add_action( 'admin_head', array( $this, 'maybe_print_dashboard_css' ), 99 );
 
 			// Booked somitemes not processed correctly and still redirect so pervent it hard
 			add_filter( 'pre_transient__booked_welcome_screen_activation_redirect', array( $this, 'hard_prevent_booked_redirect' ), 10, 2 );
+		}
+
+		/**
+		 * Set hook for rewriting theme wizard success redirect
+		 *
+		 * @return void
+		 */
+		public function set_success_redirect_for_theme_wizard() {
+			if ( jet_plugins_wizard_settings()->get_all_settings() ) {
+				add_filter( 'ttw_success_redirect_url', array( $this, 'set_theme_wizard_success_redirect' ) );
+			}
 		}
 
 		/**
