@@ -44,7 +44,7 @@
 			}
 		},
 
-		activateLicense: function() {
+		activateLicense: function( event ) {
 
 			event.preventDefault();
 
@@ -89,7 +89,7 @@
 			$( '.jet-plugins-wizard-license-errors' ).html( '' );
 		},
 
-		storePlugins: function() {
+		storePlugins: function( event ) {
 
 			var $this   = $( this ),
 				href    = $this.attr( 'href' ),
