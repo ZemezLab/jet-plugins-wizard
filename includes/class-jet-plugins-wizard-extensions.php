@@ -61,6 +61,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 		public function set_success_redirect_for_theme_wizard() {
 			if ( jet_plugins_wizard_settings()->get_all_settings() ) {
 				add_filter( 'ttw_success_redirect_url', array( $this, 'set_theme_wizard_success_redirect' ) );
+				add_filter( 'mpack-wizard/success-redirect-url', array( $this, 'set_theme_wizard_success_redirect' ) );
 			}
 		}
 
