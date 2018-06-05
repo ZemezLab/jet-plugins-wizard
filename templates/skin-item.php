@@ -15,7 +15,6 @@ $skin = jet_plugins_wizard_interface()->get_skin_data( 'slug' );
 		<?php endif; ?>
 		<div class="jet-plugins-wizard-skin-item__summary">
 			<h4 class="jet-plugins-wizard-skin-item__title"><?php echo jet_plugins_wizard_interface()->get_skin_data( 'name' ); ?></h4>
-			<h5 class="jet-plugins-wizard-skin-item__plugins-title"><?php esc_html_e( 'Recommended Plugins', 'jet-plugins-wizard' ); ?></h5>
 			<div class="jet-plugins-wizard-skin-item__actions">
 				<?php echo jet_plugins_wizard_interface()->get_install_skin_button( $skin ); ?>
 				<a href="<?php echo jet_plugins_wizard_interface()->get_skin_data( 'demo' ) ?>" data-loader="true" class="btn btn-default"><span class="text"><?php
