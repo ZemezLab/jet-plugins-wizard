@@ -4,11 +4,11 @@
 .tm-wizard {
 	background: $bodyColor;
 	color: $textColor;
-	padding: 40px 50px;
+	padding: 30px;
 	border: 1px solid $bordersColor;
 	font-size: $fontSize;
 	line-height: 19px;
-	max-width: 1100px;
+	max-width: 1220px;
 
 	.notice,
 	.updated,
@@ -17,67 +17,40 @@
 	}
 
 	&-skins {
-		padding-top: 30px;
+		padding-top: 10px;
+		margin: 0 -10px;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&-skin-item {
-		display: flex;
-		padding: 40px 0;
-		border-top: 1px solid $bordersColor;
+		padding: 10px;
+		flex: 0 0 290px;
+		max-width: 290px;
+		&-content {
+			border: 1px solid $bordersColor;
+			padding: 19px;
+		}
 		&__thumb {
-			width: 310px;
+			width: 250px;
 			img {
-				box-shadow: 0 5px 21px rgba( 0,0,0,.1 );
+				display: block;
 				width: 100%;
 				height: auto;
 			}
 		}
-		&__summary {
-			width: calc( 100% - 310px );
-			padding: 0 0 0 35px;
-		}
 		&__actions {
-			padding-top: 15px;
-			.btn {
-				width: 110px;
+			padding-top: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			> a.btn {
+				width: 116px;
+				box-sizing: border-box;
 				text-align: center;
-				margin: 0 15px 0 0;
-			}
-		}
-		&__plugins {
-			overflow: hidden;
-			max-height: 0;
-			box-sizing: border-box;
-			&-title {
-				cursor: pointer;
-				transition: all 200ms linear;
-				&:hover {
-					color: $iconColor;
-				}
-				&:after {
-					content: "\f140";
-					font-family: 'dashicons';
-					color: $iconColor;
-					font-size: 22px;
-					line-height: 18px;
-					padding: 0 0 0 5px;
-					vertical-align: text-bottom;
-				}
-				&.is-active {
-					&:after {
-						content: "\f142";
-					}
-					& + .jet-plugins-wizard-skin-item__plugins {
-						max-height: 400px;
-						margin: 0 0 10px;
-					}
-				}
-			}
-			&-content {
-				padding: 10px 10px 5px 10px;
-				border-radius: 5px;
-				border: 1px solid $bordersColor;
-				background: $innerBoxColor;
+				margin: 0;
+				padding: 10px 10px;
+				font-weight: normal;
 			}
 		}
 	}
@@ -150,7 +123,7 @@
 	}
 
 	&-msg {
-		padding: 15px 15% 25px 0;
+		padding: 0 25% 15px 0;
 	}
 
 	&-server {
@@ -168,9 +141,9 @@
 	}
 
 	h2 {
-		margin: 0 0 30px;
+		margin: 0 0 15px;
 		padding: 0 0 15px;
-		font-size: 30px;
+		font-size: 24px;
 		line-height: 1em;
 		color: $textColorAlt;
 		border-bottom: 1px solid $bordersColor;
@@ -361,7 +334,7 @@
 }
 
 .plugins-set {
-	padding-top: 50px;
+	padding-top: 30px;
 	&:first-child {
 		padding-top: 0;
 	}

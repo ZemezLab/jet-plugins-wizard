@@ -60,8 +60,9 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 		 */
 		public function set_success_redirect_for_theme_wizard() {
 			if ( jet_plugins_wizard_settings()->get_all_settings() ) {
-				add_filter( 'ttw_success_redirect_url', array( $this, 'set_theme_wizard_success_redirect' ) );
-				add_filter( 'mpack-wizard/success-redirect-url', array( $this, 'set_theme_wizard_success_redirect' ) );
+				add_filter( 'ttw_success_redirect_url', array( $this, 'theme_wizard_success_redirect' ) );
+				add_filter( 'mpack-wizard/success-redirect-url', array( $this, 'theme_wizard_success_redirect' ) );
+				add_filter( 'jet-theme-wizard/success-redirect-url', array( $this, 'theme_wizard_success_redirect' ) );
 			}
 		}
 
@@ -82,7 +83,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 		 *
 		 * @param string|bool $redirect Redirect
 		 */
-		public function set_theme_wizard_success_redirect( $redirect ) {
+		public function theme_wizard_success_redirect( $redirect ) {
 
 			$redirect = jet_plugins_wizard()->get_page_link( array( 'step' => 1, 'advanced-install' => 1 ) );
 			$skin     = false;
