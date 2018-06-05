@@ -71,7 +71,17 @@
 ?>
 </div>
 
-<a href="<?php echo jet_plugins_wizard()->get_page_link( array( 'step' => 3 ) ); ?>" data-loader="true" class="btn btn-primary store-plugins">
-	<span class="text"><?php esc_html_e( 'Next', 'jet-plugins-wizard' ); ?></span>
-	<span class="jet-plugins-wizard-loader"><span class="jet-plugins-wizard-loader__spinner"></span></span>
-</a>
+<div class="plugins-wizard-actions">
+	<a href="<?php echo jet_plugins_wizard()->get_page_link( array( 'step' => 3 ) ); ?>" data-loader="true" class="btn btn-primary store-plugins">
+		<span class="text"><?php esc_html_e( 'Next', 'jet-plugins-wizard' ); ?></span>
+		<span class="jet-plugins-wizard-loader"><span class="jet-plugins-wizard-loader__spinner"></span></span>
+	</a>
+	<div class="plugins-wizard-skip">
+		<div class="plugins-wizard-skip__msg"><?php
+			_e( 'If you already have these plugins, feel free to skip this step', 'jet-plugins-wizard' );
+		?></div>
+		<a href="<?php echo jet_plugins_wizard()->get_page_link( array( 'step' => 4 ) ); ?>" data-loader="true" class="btn"><?php
+			esc_html_e( 'Skip to Demo Content', 'jet-plugins-wizard' );
+		?></a>
+	</div>
+</div>

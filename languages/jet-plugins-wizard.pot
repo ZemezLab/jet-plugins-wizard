@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-21 16:46+0200\n"
-"PO-Revision-Date: 2017-04-21 16:46+0200\n"
+"POT-Creation-Date: 2018-06-05 12:08+0200\n"
+"PO-Revision-Date: 2018-06-05 12:08+0200\n"
 "Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
 "Language: su\n"
@@ -18,87 +18,83 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jet-plugins-wizard.php:253
-msgid "Cherry Plugin Wizard: Manifest file not found in current theme"
-msgstr ""
-
-#: includes/class-jet-plugins-wizard-data.php:59
+#: includes/class-jet-plugins-wizard-data.php:56
 msgid "Plugins array are empty"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-extensions.php:152
+#: includes/class-jet-plugins-wizard-extensions.php:161
 msgid "Recommended plugins"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:79
+#: includes/class-jet-plugins-wizard-installer.php:75
 msgid "You don't have permissions to do this"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:91
+#: includes/class-jet-plugins-wizard-installer.php:87
 msgid "No plugin to install"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:114
+#: includes/class-jet-plugins-wizard-installer.php:110
 msgid "All plugins are installed. Redirecting to the next step..."
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:142
+#: includes/class-jet-plugins-wizard-installer.php:138
 msgid "This plugin is not registered"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:246
+#: includes/class-jet-plugins-wizard-installer.php:242
 msgid "Action not provided"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:262
+#: includes/class-jet-plugins-wizard-installer.php:258
 msgid "Plugin slug not provided"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:283
+#: includes/class-jet-plugins-wizard-installer.php:279
 msgid "Installation failed"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:302
+#: includes/class-jet-plugins-wizard-installer.php:298
 msgid "Plugin data not provided"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-installer.php:319
+#: includes/class-jet-plugins-wizard-installer.php:315
 msgid "Can't perform plugin activation. Please try again later"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:76
-msgid "Plugin Installation Wizard"
+#: includes/class-jet-plugins-wizard-interface.php:72
+msgid "Plugins Installation Wizard"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:77
-msgid "Plugin Wizard"
+#: includes/class-jet-plugins-wizard-interface.php:73
+msgid "Plugins Wizard"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:183
+#: includes/class-jet-plugins-wizard-interface.php:179
 msgid "No data found for installation"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:185
+#: includes/class-jet-plugins-wizard-interface.php:181
 msgid "Start install"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:187
+#: includes/class-jet-plugins-wizard-interface.php:183
 msgid "Select skin and start install"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:318
+#: includes/class-jet-plugins-wizard-interface.php:314
 msgid "PHP version"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:326
+#: includes/class-jet-plugins-wizard-interface.php:322
 msgid "Memory limit"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:334
+#: includes/class-jet-plugins-wizard-interface.php:330
 msgid "Max execution time"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:353
+#: includes/class-jet-plugins-wizard-interface.php:351
 #, php-format
 msgid "%1$s%2$s Recommended"
 msgstr ""
@@ -107,13 +103,89 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:416
+#: includes/class-jet-plugins-wizard-interface.php:372
+msgid ""
+"Not all of your server parameters met requirements. You can continue the "
+"installation process, but it will take more time and can probably drive to "
+"bugs:"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-interface.php:427
 msgid "Select Skin"
 msgstr ""
 
-#: includes/class-jet-plugins-wizard-interface.php:420
+#: includes/class-jet-plugins-wizard-interface.php:431
 #: templates/wizard-notice.php:14
 msgid "Start Install"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:110
+msgid "Sorry, license API is disabled"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:143
+msgid "Sorry, you not allowed to activate license"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:151
+msgid "Please provide valid license key"
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:162
+msgid "Internal error, please try again later."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:176
+msgid "Thanks for license activation. Press Next to continue installation."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:212
+msgid "Your license is missing. Please check your key again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:213
+msgid ""
+"<strong>You have no more activations left.</strong> Please upgrade to a more "
+"advanced license (you'll only need to cover the difference)."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:214
+msgid ""
+"<strong>Your License Has Expired.</strong> Renew your license today to keep "
+"getting feature updates, premium support and unlimited access to the "
+"template library."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:215
+#: includes/class-jet-plugins-wizard-license.php:216
+msgid ""
+"<strong>Your license key has been cancelled</strong> (most likely due to a "
+"refund request). Please consider acquiring a new license."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:217
+#: includes/class-jet-plugins-wizard-license.php:219
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL of your site (including HTTPS/"
+"SSL migration). Please deactivate the license and then reactivate it again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:218
+msgid ""
+"<strong>Your license key doesn't match your current domain</strong>. This is "
+"most likely due to a change in the domain URL. Please deactivate the license "
+"and then reactivate it again."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:222
+msgid ""
+"An error occurred. Please check your internet connection and try again. If "
+"the problem persists, contact our support."
+msgstr ""
+
+#: includes/class-jet-plugins-wizard-license.php:237
+msgid "Please enter your license"
 msgstr ""
 
 #: includes/class-jet-plugins-wizard-plugin-upgrader-skin.php:50
@@ -139,18 +211,6 @@ msgid ""
 "not packaged in a folder."
 msgstr ""
 
-#: includes/manifest/jet-plugins-wizard-manifest.php:9
-msgid "Cherry Services List"
-msgstr ""
-
-#: includes/manifest/jet-plugins-wizard-manifest.php:15
-msgid "Cherry Data Importer"
-msgstr ""
-
-#: includes/manifest/jet-plugins-wizard-manifest.php:39
-msgid "Default"
-msgstr ""
-
 #: templates/dashboard/btn-activate.php:7
 msgid "Activate"
 msgstr ""
@@ -163,7 +223,8 @@ msgstr ""
 msgid "Install Plugin"
 msgstr ""
 
-#: templates/service-notice.php:6 templates/step-service-notice.php:6
+#: templates/service-notice.php:6 templates/step-activate-licesne.php:6
+#: templates/step-service-notice.php:6
 msgid "Installation Wizard"
 msgstr ""
 
@@ -173,6 +234,26 @@ msgstr ""
 
 #: templates/skin-item.php:26
 msgid "View Demo"
+msgstr ""
+
+#: templates/start-install-button.php:7
+#: templates/step-configure-plugins.php:76 templates/step-select-type.php:49
+msgid "Next"
+msgstr ""
+
+#: templates/step-activate-licesne.php:7
+msgid ""
+"Demo data import wizard will guide you through the process of demo content "
+"import and recommended plugins installation. Before gettings started please "
+"activate your license key."
+msgstr ""
+
+#: templates/step-activate-licesne.php:9
+msgid "Please enter your license key"
+msgstr ""
+
+#: templates/step-activate-licesne.php:11
+msgid "Activate License"
 msgstr ""
 
 #: templates/step-after-install.php:6
@@ -222,9 +303,12 @@ msgid ""
 "recommended if you want to get additional functionality to your theme."
 msgstr ""
 
-#: templates/step-configure-plugins.php:75 templates/step-select-type.php:49
-#: templates/step-service-notice.php:21
-msgid "Next"
+#: templates/step-configure-plugins.php:81
+msgid "If you already have these plugins, feel free to skip this step"
+msgstr ""
+
+#: templates/step-configure-plugins.php:84
+msgid "Skip to Demo Content"
 msgstr ""
 
 #: templates/step-install.php:6

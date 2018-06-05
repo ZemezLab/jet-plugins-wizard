@@ -496,9 +496,23 @@
 	}
 }
 
+.plugins-wizard-actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
 .jet-plugins-wizard-license-errors {
 	padding: 5px 0 0 0;
 	color: $dangerColor;
+}
+
+.plugins-wizard-skip {
+	text-align: right;
+	&__msg {
+		margin: -20px 0 10px;
+		color: $textColorAlt;
+	}
 }
 
 @-webkit-keyframes move {

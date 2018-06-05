@@ -3,7 +3,7 @@
  * Plugin Name: Jet Plugins Wizard
  * Plugin URI:  https://zemez.io
  * Description: Plugins installation wizard.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Zemez
  * Author URI:
  * Text Domain: jet-plugins-wizard
@@ -356,7 +356,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 				$handle,
 				$this->url( 'assets/js/jet-plugins-wizard.js' ),
 				array( 'wp-util' ),
-				'170208',
+				'180605',
 				true
 			);
 
@@ -364,7 +364,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 				$handle . '-dashboard',
 				$this->url( 'assets/js/jet-plugins-wizard-dashboard.js' ),
 				array( 'jquery' ),
-				'170208',
+				'180605',
 				true
 			);
 
@@ -372,7 +372,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard' ) ) {
 				$handle,
 				$this->url( 'assets/css/jet-plugins-wizard.css' ),
 				false,
-				'170302'
+				'180605'
 			);
 		}
 
