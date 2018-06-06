@@ -54,11 +54,8 @@
 				box-sizing: border-box;
 				text-align: center;
 				margin: 0;
-				font-size: 11px;
-				padding: 8px 10px;
-				font-weight: normal;
-				box-shadow: none;
-				border-radius: 3px;
+				padding-left: 10px;
+				padding-right: 10px;
 			}
 		}
 	}
@@ -171,60 +168,68 @@
 		color: $textColorAlt;
 	}
 	.btn {
-		display: inline-block;
-		padding: 15px 30px;
-		font-size: 12px;
-		line-height: 20px;
-		text-transform: uppercase;
-		font-weight: bold;
-		border: none;
-		outline: none;
-		background: $defaultColor;
-		color: #fff;
-		cursor: pointer;
-		vertical-align: top;
-		border-radius: 5px;
-		transition: all 200ms linear;
-		text-decoration: none;
-		box-shadow: 0 5px 15px rgba( 0,0,0,.18 );
 		position: relative;
-		&:focus,
-		&:active {
-			box-shadow: none;
-			color: #fff;
+		display: inline-block;
+		font-size: 11px;
+		line-height: 18px;
+		text-decoration: none;
+		padding: 4px 22px;
+		color: $textColorAlt;
+		text-transform: uppercase;
+		border-radius: 4px;
+		border-width: 1px;
+		border-style: solid;
+		outline: none;
+		cursor: pointer;
+		transition: all 200ms linear;
+		border-color: $normal_outset_1 $normal_outset_2 $normal_outset_2 $normal_outset_1;
+		background-color: $normal_gradint_2;
+		&:before {
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 4px;
+			background-image: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+			content: '';
 		}
+
 		&:hover {
-			background: $defaultColorAlt;
-			color: #fff;
-			box-shadow: 0 1px 3px rgba( 0,0,0,.18 );
+			&:before {
+				background-image: linear-gradient(0deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+			}
+		}
+
+		&:active {
+			&:before {
+				opacity: 0;
+			}
 		}
 		&.btn-primary {
-			background: $primaryColor;
+			border-color: $primary_outset_1 $primary_outset_2 $primary_outset_2 $primary_outset_1;
+			background-color: $primary_gradint_2;
+			color: #fff;
 			&.disabled {
 				background: lighten( $primaryColor, 10% );
 				cursor: default;
 			}
-			&:hover {
-				background: $primaryColorAlt;
-			}
 		}
 		&.btn-success {
-			background: $successColor;
-			&:hover {
-				background: $successColorAlt;
-			}
+			color: #fff;
+			border-color: $success_outset_1 $success_outset_2 $success_outset_2 $success_outset_1;
+			background-color: $success_gradint_2;
 		}
 		&.btn-danger {
-			background: $dangerColor;
-			&:hover {
-				background: $dangerColorAlt;
-			}
+			color: #fff;
+			border-color: $danger_outset_1 $danger_outset_2 $danger_outset_2 $danger_outset_1;
+			background-color: $danger_gradint_2;
 		}
 		&.btn-warning {
-			background: $warningColor;
-			&:hover {
-				background: $warningColorAlt;
-			}
+			color: #fff;
+			border-color: $warning_outset_1 $warning_outset_2 $warning_outset_2 $warning_outset_1;
+			background-color: $warning_gradint_2;
 		}
 		.dashicons,
 		.dashicons-before::before {
@@ -269,13 +274,13 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 20px;
-		height: 20px;
-		margin: -13px 0 0 -13px;
+		width: 14px;
+		height: 14px;
+		margin: -9px 0 0 -10px;
 	}
 	.jet-plugins-wizard-item & {
 		position: absolute;
-		top: 19px;
+		top: 14px;
 		left: 27px;
 		width: 14px;
 		height: 14px;
@@ -285,8 +290,8 @@
 		width: 100%;
 		height: 100%;
 		animation: spin .7s linear infinite;
-		border: 3px solid #FFF;
-		border-top: 3px solid #3498DB;
+		border: 2px solid #FFF;
+		border-top: 2px solid #3498DB;
 		border-radius: 50%;
 		transition: opacity 300ms linear;
 		opacity: 0;
@@ -300,7 +305,7 @@
 
 .jet-plugins-wizard-item,
 .tm-wizard-item {
-	padding: 19px 95px 19px 55px;
+	padding: 14px 95px 14px 55px;
 	border: 1px solid $bordersColor;
 	line-height: 20px;
 	font-size: 14px;
@@ -315,7 +320,7 @@
 	> .dashicons {
 		position: absolute;
 		left: 20px;
-		top: 15px;
+		top: 10px;
 		font-size: 30px;
 	}
 	&.installed-success {
@@ -390,7 +395,7 @@
 }
 
 .tm-config-list {
-	padding: 0 0 50px;
+	padding: 0 0 10px;
 }
 
 .tm-warning-notice {
@@ -491,7 +496,7 @@
 .plugins-wizard-skip {
 	text-align: right;
 	&__msg {
-		margin: -20px 0 10px;
+		margin: 0 0 10px;
 		color: $textColorAlt;
 	}
 }
