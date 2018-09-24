@@ -3,7 +3,7 @@
  * Plugin Name: Jet Plugins Wizard
  * Plugin URI:  https://zemez.io
  * Description: Plugins installation wizard.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      Zemez
  * Author URI:
  * Text Domain: jet-plugins-wizard

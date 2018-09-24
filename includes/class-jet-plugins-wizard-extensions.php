@@ -32,6 +32,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 		public function __construct() {
 
 			add_action( 'jet-plugins-wizard/after-plugin-activation', array( $this, 'prevent_bp_redirect' ) );
+			add_action( 'jet-plugins-wizard/after-plugin-activation', array( $this, 'prevent_elementor_redirect' ) );
 			add_action( 'jet-plugins-wizard/after-plugin-activation', array( $this, 'prevent_bbp_redirect' ) );
 			add_action( 'jet-plugins-wizard/after-plugin-activation', array( $this, 'prevent_booked_redirect' ) );
 			add_action( 'jet-plugins-wizard/after-plugin-activation', array( $this, 'prevent_tribe_redirect' ) );
@@ -245,6 +246,24 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 
 			return true;
 		}
+
+		/**
+		 * Prevent Elementor redirect.
+		 *
+		 * @return bool
+		 */
+		public function prevent_elementor_redirect( $plugin ) {
+
+			if ( 'elementor' !== $plugin['slug'] ) {
+				return false;
+			}
+
+			delete_transient( 'elementor_activation_redirect' );
+
+			return true;
+		}
+
+
 
 		/**
 		 * Prevent BBPress redirect.
