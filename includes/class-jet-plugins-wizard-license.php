@@ -173,7 +173,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_License' ) ) {
 
 					printf(
 						'<div class="jet-plugins-wizard-msg">%1$s</div>',
-						__( 'Thanks for license activation. Press Next to continue installation.', 'jet-theme-core' )
+						__( 'Thanks for license activation. Press Next to continue installation.', 'jet-plugins-wizard' )
 					);
 
 					jet_plugins_wizard()->get_template( 'start-install-button.php' );
@@ -209,17 +209,17 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_License' ) ) {
 		public function get_error_by_code( $code ) {
 
 			$messages = array(
-				'missing' => __( 'Your license is missing. Please check your key again.', 'jet-theme-core' ),
-				'no_activations_left' => __( '<strong>You have no more activations left.</strong> Please upgrade to a more advanced license (you\'ll only need to cover the difference).', 'jet-theme-core' ),
-				'expired' => __( '<strong>Your License Has Expired.</strong> Renew your license today to keep getting feature updates, premium support and unlimited access to the template library.', 'jet-theme-core' ),
-				'revoked' => __( '<strong>Your license key has been cancelled</strong> (most likely due to a refund request). Please consider acquiring a new license.', 'jet-theme-core' ),
-				'disabled' => __( '<strong>Your license key has been cancelled</strong> (most likely due to a refund request). Please consider acquiring a new license.', 'jet-theme-core' ),
-				'invalid' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL of your site (including HTTPS/SSL migration). Please deactivate the license and then reactivate it again.', 'jet-theme-core' ),
-				'site_inactive' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL. Please deactivate the license and then reactivate it again.', 'jet-theme-core' ),
-				'inactive' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL of your site (including HTTPS/SSL migration). Please deactivate the license and then reactivate it again.', 'jet-theme-core' ),
+				'missing' => __( 'Your license is missing. Please check your key again.', 'jet-plugins-wizard' ),
+				'no_activations_left' => __( '<strong>You have no more activations left.</strong> Please upgrade to a more advanced license (you\'ll only need to cover the difference).', 'jet-plugins-wizard' ),
+				'expired' => __( '<strong>Your License Has Expired.</strong> Renew your license today to keep getting feature updates, premium support and unlimited access to the template library.', 'jet-plugins-wizard' ),
+				'revoked' => __( '<strong>Your license key has been cancelled</strong> (most likely due to a refund request). Please consider acquiring a new license.', 'jet-plugins-wizard' ),
+				'disabled' => __( '<strong>Your license key has been cancelled</strong> (most likely due to a refund request). Please consider acquiring a new license.', 'jet-plugins-wizard' ),
+				'invalid' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL of your site (including HTTPS/SSL migration). Please deactivate the license and then reactivate it again.', 'jet-plugins-wizard' ),
+				'site_inactive' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL. Please deactivate the license and then reactivate it again.', 'jet-plugins-wizard' ),
+				'inactive' => __( '<strong>Your license key doesn\'t match your current domain</strong>. This is most likely due to a change in the domain URL of your site (including HTTPS/SSL migration). Please deactivate the license and then reactivate it again.', 'jet-plugins-wizard' ),
 			);
 
-			$default = __( 'An error occurred. Please check your internet connection and try again. If the problem persists, contact our support.', 'jet-theme-core' );
+			$default = __( 'An error occurred. Please check your internet connection and try again. If the problem persists, contact our support.', 'jet-plugins-wizard' );
 
 			return isset( $messages[ $code ] ) ? $messages[ $code ] : $default;
 

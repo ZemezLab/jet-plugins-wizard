@@ -160,7 +160,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Extensions' ) ) {
 			$builder->register_section(
 				array(
 					'jet-plugins-wizard' => array(
-						'title' => esc_html__( 'Recommended plugins', 'tm-dashboard' ),
+						'title' => esc_html__( 'Recommended plugins', 'jet-plugins-wizard' ),
 						'class' => 'tm-dashboard-section tm-dashboard-section--jet-plugins-wizard',
 						'view'  => $dashboard->plugin_dir( 'admin/views/section.php' ),
 					),
