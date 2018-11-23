@@ -1,13 +1,12 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Jet Plugin Wizard\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-23 12:04+0200\n"
-"PO-Revision-Date: 2018-06-05 12:08+0200\n"
+"PO-Revision-Date: 2018-11-23 12:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
-"Language: su\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,78 +17,77 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.1.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: cherry-framework\n"
-"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: includes/class-jet-plugins-wizard-data.php:56
 msgid "Plugins array are empty"
-msgstr ""
+msgstr "Список плагинов пуст"
 
 #: includes/class-jet-plugins-wizard-extensions.php:163
 msgid "Recommended plugins"
-msgstr ""
+msgstr "Рекомендуемые плагины"
 
 #: includes/class-jet-plugins-wizard-installer.php:75
 msgid "You don't have permissions to do this"
-msgstr ""
+msgstr "Эта опция Вам недоступна"
 
 #: includes/class-jet-plugins-wizard-installer.php:87
 msgid "No plugin to install"
-msgstr ""
+msgstr "Отсутствуют плагины для установки"
 
 #: includes/class-jet-plugins-wizard-installer.php:110
 msgid "All plugins are installed. Redirecting to the next step..."
-msgstr ""
+msgstr "Все плагины установлены. Перенаправление к следующему шагу..."
 
 #: includes/class-jet-plugins-wizard-installer.php:138
 msgid "This plugin is not registered"
-msgstr ""
+msgstr "Этот плагин не зарегистрирован"
 
 #: includes/class-jet-plugins-wizard-installer.php:242
 msgid "Action not provided"
-msgstr ""
+msgstr "Действие не предусмотрено"
 
 #: includes/class-jet-plugins-wizard-installer.php:258
 msgid "Plugin slug not provided"
-msgstr ""
+msgstr "Slug для плагина не предусмотрен"
 
 #: includes/class-jet-plugins-wizard-installer.php:279
 msgid "Installation failed"
-msgstr ""
+msgstr "Установка не удалась"
 
 #: includes/class-jet-plugins-wizard-installer.php:298
 msgid "Plugin data not provided"
-msgstr ""
+msgstr "Данные плагина не предоставлены"
 
 #: includes/class-jet-plugins-wizard-installer.php:315
 msgid "Can't perform plugin activation. Please try again later"
-msgstr ""
+msgstr "Невозможно выполнить активацию плагина. Пожалуйста, попробуйте позже"
 
 #: includes/class-jet-plugins-wizard-interface.php:72
 msgid "Plugins Installation Wizard"
-msgstr ""
+msgstr "Мастер установки плагинов"
 
 #: includes/class-jet-plugins-wizard-interface.php:73
 msgid "Plugins Wizard"
-msgstr ""
+msgstr "Plugins Wizard"
 
 #: includes/class-jet-plugins-wizard-interface.php:179
 msgid "No data found for installation"
-msgstr ""
+msgstr "Данные для установки не найдены"
 
 #: includes/class-jet-plugins-wizard-interface.php:181
 msgid "Start install"
-msgstr ""
+msgstr "Начать установку"
 
 #: includes/class-jet-plugins-wizard-interface.php:183
 msgid "Select skin and start install"
-msgstr ""
+msgstr "Выберите скин для установки"
 
 #: includes/class-jet-plugins-wizard-interface.php:314
 msgid "PHP version"
-msgstr ""
+msgstr "Версия PHP"
 
 #: includes/class-jet-plugins-wizard-interface.php:322
 msgid "Memory limit"
@@ -102,11 +100,11 @@ msgstr ""
 #: includes/class-jet-plugins-wizard-interface.php:351
 #, php-format
 msgid "%1$s%2$s Recommended"
-msgstr ""
+msgstr "Рекомендуются %1$s%2$s"
 
 #: includes/class-jet-plugins-wizard-interface.php:357
 msgid "Ok"
-msgstr ""
+msgstr "Соответствует"
 
 #: includes/class-jet-plugins-wizard-interface.php:372
 msgid ""
@@ -114,45 +112,52 @@ msgid ""
 "installation process, but it will take more time and can probably drive to "
 "bugs:"
 msgstr ""
+"Не все параметры вашего сервера соответствуют требованиям. Возможны ошибки в "
+"процессе установки."
 
 #: includes/class-jet-plugins-wizard-interface.php:427
 msgid "Select Skin"
-msgstr ""
+msgstr "Выбрать скин"
 
 #: includes/class-jet-plugins-wizard-interface.php:431
 #: templates/wizard-notice.php:14
 msgid "Start Install"
-msgstr ""
+msgstr "Установить"
 
 #: includes/class-jet-plugins-wizard-license.php:110
 msgid "Sorry, license API is disabled"
-msgstr ""
+msgstr "К сожалению, лицензионный API отключен"
 
 #: includes/class-jet-plugins-wizard-license.php:143
 msgid "Sorry, you not allowed to activate license"
-msgstr ""
+msgstr "Извините, вы не можете активировать лицензию"
 
 #: includes/class-jet-plugins-wizard-license.php:151
 msgid "Please provide valid license key"
-msgstr ""
+msgstr "Пожалуйста, введите действительный лицензионный ключ"
 
 #: includes/class-jet-plugins-wizard-license.php:162
 msgid "Internal error, please try again later."
-msgstr ""
+msgstr "Произошла внутренняя ошибка. Пожалуйста, повторите попытку позже."
 
 #: includes/class-jet-plugins-wizard-license.php:176
 msgid "Thanks for license activation. Press Next to continue installation."
 msgstr ""
+"Благодарим за активацию лицензии. Нажмите \"Далее\" чтобы продолжить "
+"установку."
 
 #: includes/class-jet-plugins-wizard-license.php:212
 msgid "Your license is missing. Please check your key again."
-msgstr ""
+msgstr "Лицензионный ключ отсутствует. Пожалуйста, проверьте его корректность."
 
 #: includes/class-jet-plugins-wizard-license.php:213
 msgid ""
 "<strong>You have no more activations left.</strong> Please upgrade to a more "
 "advanced license (you'll only need to cover the difference)."
 msgstr ""
+"<strong>У вас больше не осталось попыток активации.</strong> Пожалуйста, "
+"обновите лицензию до более расширенной (вам нужно будет заплатить только "
+"разницу)."
 
 #: includes/class-jet-plugins-wizard-license.php:214
 msgid ""
@@ -160,6 +165,9 @@ msgid ""
 "getting feature updates, premium support and unlimited access to the "
 "template library."
 msgstr ""
+"<strong> Срок действия вашей лицензии истёк.</strong> Обновите вашу лицензию "
+"сегодня, чтобы продолжать получать обновления функционала, премиум-поддержку "
+"и неограниченный доступ к библиотеке шаблонов."
 
 #: includes/class-jet-plugins-wizard-license.php:215
 #: includes/class-jet-plugins-wizard-license.php:216
@@ -167,6 +175,8 @@ msgid ""
 "<strong>Your license key has been cancelled</strong> (most likely due to a "
 "refund request). Please consider acquiring a new license."
 msgstr ""
+"<strong>Ваш лицензионный ключ был деактивирован</strong> (вероятно из-за "
+"запроса возврата денег). Пожалуйста, подумайте о приобретении новой лицензии."
 
 #: includes/class-jet-plugins-wizard-license.php:217
 #: includes/class-jet-plugins-wizard-license.php:219
@@ -175,6 +185,10 @@ msgid ""
 "most likely due to a change in the domain URL of your site (including HTTPS/"
 "SSL migration). Please deactivate the license and then reactivate it again."
 msgstr ""
+"<strong>Ваш лицензионный ключ не соответствует текущему домену</strong>. "
+"Это, вероятно, связано с изменением URL-адреса вашего сайта (включая HTTPS/"
+"SSL перемещение). Пожалуйста, деактивируйте лицензию, а затем активируйте ее "
+"снова."
 
 #: includes/class-jet-plugins-wizard-license.php:218
 msgid ""
@@ -182,26 +196,33 @@ msgid ""
 "most likely due to a change in the domain URL. Please deactivate the license "
 "and then reactivate it again."
 msgstr ""
+"<strong>Ваш лицензионный ключ не соответствует вашему текущему домену</"
+"strong>. Это, вероятно, связано с изменением URL-адреса домена. Пожалуйста, "
+"деактивируйте лицензию, а затем активируйте ее снова."
 
 #: includes/class-jet-plugins-wizard-license.php:222
 msgid ""
 "An error occurred. Please check your internet connection and try again. If "
 "the problem persists, contact our support."
 msgstr ""
+"Произошла ошибка. Пожалуйста, проверьте подключение к Интернету и повторите "
+"попытку. Если проблема не устранена, обратитесь в нашу службу поддержки."
 
 #: includes/class-jet-plugins-wizard-license.php:237
 msgid "Please enter your license"
-msgstr ""
+msgstr "Пожалуйста, введите лицензионный ключ"
 
 #: includes/class-jet-plugins-wizard-plugin-upgrader-skin.php:50
 msgid "Details"
-msgstr ""
+msgstr "Подробнее"
 
 #: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
+"Локальный пакет плагинов не содержит папку с нужным slug, и переименование "
+"не сработало."
 
 #: includes/class-jet-plugins-wizard-plugin-upgrader.php:115
 #: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
@@ -209,38 +230,42 @@ msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
+"Обратитесь к поставщику плагинов и попросите их упаковать плагин в "
+"соответствии с рекомендациями WordPress."
 
 #: includes/class-jet-plugins-wizard-plugin-upgrader.php:123
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
+"Локальный пакет плагинов состоит из нескольких файлов, но файлы не находятся "
+"в папке."
 
 #: templates/dashboard/btn-activate.php:7
 msgid "Activate"
-msgstr ""
+msgstr "Активировать"
 
 #: templates/dashboard/btn-install.php:7
 msgid "Install"
-msgstr ""
+msgstr "Установить"
 
 #: templates/plugin-item.php:8
 msgid "Install Plugin"
-msgstr ""
+msgstr "Установка плагина"
 
 #: templates/service-notice.php:6 templates/step-activate-licesne.php:6
 #: templates/step-service-notice.php:6
 msgid "Installation Wizard"
-msgstr ""
+msgstr "Мастер установки"
 
 #: templates/skin-item.php:21
 msgid "View Demo"
-msgstr ""
+msgstr "Предпросмотр"
 
 #: templates/start-install-button.php:7 templates/step-configure-plugins.php:76
 #: templates/step-select-type.php:49
 msgid "Next"
-msgstr ""
+msgstr "Далее"
 
 #: templates/step-activate-licesne.php:7
 msgid ""
@@ -248,22 +273,25 @@ msgid ""
 "import and recommended plugins installation. Before gettings started please "
 "activate your license key."
 msgstr ""
+"При помощи Мастера установки Вы сможете импортировать демо контент и "
+"установить рекомендуемые плагины. Перед началом установки, пожалуйста, "
+"введите Ваш Лицензионный Ключ."
 
 #: templates/step-activate-licesne.php:9
 msgid "Please enter your license key"
-msgstr ""
+msgstr "Пожалуйста, введите лицензионный ключ"
 
 #: templates/step-activate-licesne.php:11
 msgid "Activate License"
-msgstr ""
+msgstr "Активировать"
 
 #: templates/step-after-install.php:6
 msgid "Congratulations"
-msgstr ""
+msgstr "Поздравляем"
 
 #: templates/step-after-install.php:7
 msgid "Install complete"
-msgstr ""
+msgstr "Установка завершена"
 
 #: templates/step-before-install.php:7
 msgid ""
@@ -271,24 +299,26 @@ msgid ""
 "Depending upon the selected skin the wizard will install required plugins "
 "and some demo posts and pages"
 msgstr ""
+"В зависимости от выбранного скина, Мастер установки добавит рекомендуемые "
+"плагины, шаблоны страниц и посты."
 
 #: templates/step-configure-plugins.php:6
 msgid "Configure plugins"
-msgstr ""
+msgstr "Настройка списка плагинов"
 
 #: templates/step-configure-plugins.php:32
 msgid "Required Plugins"
-msgstr ""
+msgstr "Необходимые плагины"
 
 #: templates/step-configure-plugins.php:33
 msgid ""
 "The minimum set of service plugins for your theme installation is set by "
 "default."
-msgstr ""
+msgstr "Минимальный набор плагинов для корректной работы скина."
 
 #: templates/step-configure-plugins.php:46
 msgid "Recommended Plugins"
-msgstr ""
+msgstr "Рекомендуемые плагины"
 
 #: templates/step-configure-plugins.php:47
 msgid ""
@@ -297,38 +327,49 @@ msgid ""
 "one or more plugins from this list, the specific sections of the template, "
 "for which these plugins are responsible, will not be displayed."
 msgstr ""
+"Данный набор базовых плагинов рекомендуется для корректного отображения "
+"страниц скина. Если вы не установите один или несколько плагинов из этого "
+"списка, определенные секции шаблона, относящиеся к этим плагинам, не будут "
+"отображаться."
 
 #: templates/step-configure-plugins.php:60
 msgid "Extra Plugins"
-msgstr ""
+msgstr "Дополнительные плагины"
 
 #: templates/step-configure-plugins.php:61
 msgid ""
 "The full list of plugins available for a template installation is "
 "recommended if you want to get additional functionality to your theme."
 msgstr ""
+"Полный список плагинов, доступных для установки и использования с данным "
+"скином - рекомендуется, если вы хотите использовать дополнительный "
+"функционал."
 
 #: templates/step-configure-plugins.php:81
 msgid "If you already have these plugins, feel free to skip this step"
 msgstr ""
+"Если у Вас уже установлены данные плагины, пропустите этот шаг и перейдите к "
+"установке демо контента."
 
 #: templates/step-configure-plugins.php:84
 msgid "Skip to Demo Content"
-msgstr ""
+msgstr "Перейти к установке демо контента"
 
 #: templates/step-install.php:6
 msgid "Install Plugins"
-msgstr ""
+msgstr "Установить плагины"
 
 #: templates/step-install.php:8
 msgid ""
 "Before demo data import a set of required plugins will be installed. Please "
 "be patient, this may take few minutes."
 msgstr ""
+"Перед импортом демо контента будет установлен набор необходимых плагинов. "
+"Процесс займет несколько минут."
 
 #: templates/step-select-type.php:10
 msgid "Demo Content Settings"
-msgstr ""
+msgstr "Настройки демо контента"
 
 #: templates/step-select-type.php:12
 msgid ""
@@ -336,10 +377,14 @@ msgid ""
 "posts and plugins may affect your site speed. We recommend importing lite "
 "version of demo content if you are running shared inexpensive server."
 msgstr ""
+"Каждый скин включает упрощённую и полную версию демо контента. Количество "
+"публикаций и плагинов может повлиять на скорость Вашего сайта. Мы "
+"рекомендуем импортировать облегченную версию демо контента, если Вы желаете "
+"уменьшить нагрузку на сервер."
 
 #: templates/step-select-type.php:20
 msgid "Lite Install"
-msgstr ""
+msgstr "Упрощенная установка"
 
 #: templates/step-select-type.php:23
 msgid ""
@@ -348,10 +393,13 @@ msgid ""
 "template. It is recommended to install the Lite sample data version if you "
 "use an entry-level hosting plan."
 msgstr ""
+"Упрощённая версия демо контента включает оптимальное количество публикаций и "
+"изображений для блога, и подходит для ознакомления со скином. Рекомендуется "
+"установить упрощённую версию, если Вы хотите уменьшить нагрузку на сервер."
 
 #: templates/step-select-type.php:31
 msgid "Full Install"
-msgstr ""
+msgstr "Полная установка"
 
 #: templates/step-select-type.php:34
 msgid ""
@@ -360,6 +408,10 @@ msgid ""
 "and more. It is recommended to install a Full sample data version if you use "
 "premium hosting plans, dedicated or VPS servers."
 msgstr ""
+"Полная версия демо контента содержит все публикации, продукты, обзоры, "
+"изображения, и многое другое. Рекомендуется установить полную версию демо "
+"контента, если Вы используете премиальный хостинг-план, отдельный или VPS-"
+"сервер."
 
 #: templates/step-service-notice.php:7
 msgid ""
@@ -367,14 +419,17 @@ msgid ""
 "import and recommended plugins installation. Before gettings started make "
 "sure your server complies with"
 msgstr ""
+"Мастер установки импортирует демо контент и установит рекомендуемые плагины. "
+"Перед тем, как приступить к установке, пожалуйста, убедитесь, что Ваш сервер "
+"находится в соответствии с "
 
 #: templates/step-service-notice.php:7
 msgid "WordPress minimal requirements."
-msgstr ""
+msgstr "Минимальными требованиями к среде WordPress."
 
 #: templates/step-service-notice.php:8
 msgid "Your system information:"
-msgstr ""
+msgstr "Соответствие системы рекомендуемым требованиям:"
 
 #: templates/step-service-notice.php:15
 msgid ""
@@ -382,6 +437,9 @@ msgid ""
 "installation process, but it will take more time and can probably drive to "
 "bugs."
 msgstr ""
+"Не все параметры Вашего сервера соответствуют требованиям. Вы можете "
+"продолжить процесс установки, но он займёт больше времени и может привести к "
+"ошибкам."
 
 #: templates/wizard-notice.php:10
 #, php-format
@@ -389,7 +447,10 @@ msgid ""
 "This wizard will help you to select skin, install plugins and import demo "
 "data for your %s theme. To start the install click the button below!"
 msgstr ""
+"Мастер установки поможет Вам выбрать скин, установить плагины и "
+"импортировать демо контент для темы % s. Чтобы начать установку, нажмите "
+"кнопку \"Установить\"."
 
 #: templates/wizard-notice.php:17
 msgid "Dismiss"
-msgstr ""
+msgstr "Отклонить"
