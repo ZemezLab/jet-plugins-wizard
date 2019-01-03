@@ -45,6 +45,13 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		private $defaults = null;
 
 		/**
+		 * Has registered external config
+		 *
+		 * @var boolean
+		 */
+		private $has_external = false;
+
+		/**
 		 * Get settings from array.
 		 *
 		 * @param  array  $settings Settings trail to get.
@@ -87,7 +94,16 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		 * @return [type]         [description]
 		 */
 		public function register_external_config( $config = array() ) {
+			$this->has_external      = true;
 			$this->external_settings = array_merge( $this->external_settings, $config );
+		}
+
+		/**
+		 * Return external config status
+		 * @return boolean [description]
+		 */
+		public function has_external() {
+			return $this->has_external;
 		}
 
 		/**
@@ -146,6 +162,10 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 
 			$data = get_site_transient( $transient_key );
 
+			if ( $this->has_external() ) {
+				$data = false;
+			}
+
 			if ( ! $data ) {
 
 				$response = wp_remote_get( $url, array(
@@ -160,7 +180,9 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 					$data = array();
 				}
 
-				set_site_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+				if ( ! $this->has_external() ) {
+					set_site_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+				}
 
 			}
 
