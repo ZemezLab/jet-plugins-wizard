@@ -37,6 +37,14 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 */
 		public $advances_plugins = 'jet_plugins_wizard_stored_plugins';
 
+		public $hubspot_slug = 'leadin';
+		public $hubspot_data = array(
+			'name'   => 'Contact Form Builder for WordPress – Conversion Tools by HubSpot',
+			'source' => 'wordpress',
+			'path'   => '',
+			'access' => 'skins',
+		);
+
 		/**
 		 * Constructor for the class
 		 */
@@ -78,16 +86,30 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 * @return array
 		 */
 		public function get_plugin_data( $plugin = '' ) {
+
 			$plugins = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
+
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->hubspot_slug ) {
+
+				$data         = $this->hubspot_data;
+				$data['slug'] = $this->hubspot_slug;
+
+				return $data;
+
+			}
 
 			if ( ! isset( $plugins[ $plugin ] ) ) {
 				return array();
 			}
 
-			$data = $plugins[ $plugin ];
+			$data         = $plugins[ $plugin ];
 			$data['slug'] = $plugin;
 
 			return $data;
+
 		}
 
 		/**
@@ -115,6 +137,21 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			$base  = ! empty( $skins['base'] ) ? $skins['base'] : array();
 			$lite  = ! empty( $skins['advanced'][ $skin ]['lite'] ) ? $skins['advanced'][ $skin ]['lite'] : array();
 			$full  = ! empty( $skins['advanced'][ $skin ]['full'] ) ? $skins['advanced'][ $skin ]['full'] : array();
+
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() ) {
+
+				if ( ! in_array( $this->hubspot_slug, $lite ) ) {
+					$lite[] = $this->hubspot_slug;
+				}
+
+				if ( ! in_array( $this->hubspot_slug, $full ) ) {
+					$full[] = $this->hubspot_slug;
+				}
+
+			}
 
 			$this->skin_plugins[ $skin ] = array(
 				'lite' => array_merge( $base, $lite ),
@@ -253,7 +290,16 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 * @return array
 		 */
 		public function get_all_plugins_list() {
+
 			$registered = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
+
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && ! isset( $registered[ $this->hubspot_slug ] ) ) {
+				$registered[ $this->hubspot_slug ] = $this->hubspot_data;
+			}
+
 			return $registered;
 		}
 
