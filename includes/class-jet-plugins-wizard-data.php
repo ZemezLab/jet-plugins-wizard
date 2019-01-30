@@ -37,12 +37,12 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 */
 		public $advances_plugins = 'jet_plugins_wizard_stored_plugins';
 
-		public $hubspot_allowed = false;
+		public $hubspot_allowed = true;
 		public $hubspot_slug    = 'leadin';
 		public $hubspot_data    = array(
 			'name'   => 'Contact Form Builder for WordPress – Conversion Tools by HubSpot',
-			'source' => 'wordpress',
-			'path'   => '',
+			'source' => 'remote',
+			'path'   => 'https://zemez.io/hubspot/leadin-template-monster.zip',
 			'access' => 'skins',
 		);
 
