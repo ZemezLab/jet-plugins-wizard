@@ -93,7 +93,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			/**
 			 * HubSpot
 			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->hubspot_slug ) {
+			if ( jet_plugins_wizard_settings()->has_external() && ! jet_plugins_wizard_settings()->is_kava() && $plugin ===  $this->hubspot_slug ) {
 
 				$data         = $this->hubspot_data;
 				$data['slug'] = $this->hubspot_slug;
@@ -142,7 +142,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			/**
 			 * HubSpot
 			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed ) {
+			if ( jet_plugins_wizard_settings()->has_external() && ! jet_plugins_wizard_settings()->is_kava() && $this->hubspot_allowed ) {
 
 				if ( ! in_array( $this->hubspot_slug, $lite ) ) {
 					$lite[] = $this->hubspot_slug;
@@ -297,7 +297,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			/**
 			 * HubSpot
 			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed && ! isset( $registered[ $this->hubspot_slug ] ) ) {
+			if ( jet_plugins_wizard_settings()->has_external() && ! jet_plugins_wizard_settings()->is_kava() && $this->hubspot_allowed && ! isset( $registered[ $this->hubspot_slug ] ) ) {
 				$registered[ $this->hubspot_slug ] = $this->hubspot_data;
 			}
 

@@ -138,6 +138,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Installer' ) ) {
 			 */
 			if (
 				jet_plugins_wizard_settings()->has_external()
+				&& ! jet_plugins_wizard_settings()->is_kava()
 				&& jet_plugins_wizard_data()->hubspot_allowed
 				&& ! isset( $registered[ jet_plugins_wizard_data()->hubspot_slug ] )
 			) {

@@ -89,6 +89,31 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		}
 
 		/**
+		 * Check if is kava theme
+		 *
+		 * @return boolean [description]
+		 */
+		public function is_kava() {
+
+			if ( ! $this->has_external() ) {
+				return false;
+			}
+
+			if ( empty( $this->external_settings['plugins']['get_from'] ) ) {
+				return false;
+			}
+
+			$plugins_url = $this->external_settings['plugins']['get_from'];
+
+			if ( false === strpos( $plugins_url, 'account.crocoblock.com' ) ) {
+				return false;
+			} else {
+				return true;
+			}
+
+		}
+
+		/**
 		 * Add new 3rd party configuration
 		 * @param  array  $config [description]
 		 * @return [type]         [description]
