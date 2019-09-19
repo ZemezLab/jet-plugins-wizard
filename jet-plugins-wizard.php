@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Jet Plugins Wizard
- * Plugin URI:  https://zemez.io
+ * Plugin URI:  https://crocoblock.com
  * Description: Plugins installation wizard.
  * Version:     1.2.1
  * Author:      Zemez
