@@ -133,6 +133,18 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Installer' ) ) {
 
 			$registered = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
 
+			/**
+			 * HubSpot
+			 */
+			if (
+				jet_plugins_wizard_settings()->has_external()
+				&& ! jet_plugins_wizard_settings()->is_kava()
+				&& jet_plugins_wizard_data()->hubspot_allowed
+				&& ! isset( $registered[ jet_plugins_wizard_data()->hubspot_slug ] )
+			) {
+				$registered[ jet_plugins_wizard_data()->hubspot_slug ] = jet_plugins_wizard_data()->hubspot_data;
+			}
+
 			if ( ! isset( $registered[ $next ] ) ) {
 				wp_send_json_error(
 					array( 'message' => esc_html__( 'This plugin is not registered', 'jet-plugins-wizard' ) )

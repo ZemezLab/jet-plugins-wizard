@@ -3,7 +3,7 @@
  * Plugin Name: Jet Plugins Wizard
  * Plugin URI:  https://crocoblock.com
  * Description: Plugins installation wizard.
- * Version:     1.2.1
+ * Version:     1.2.2
  * Author:      Zemez
  * Author URI:
  * Text Domain: jet-plugins-wizard

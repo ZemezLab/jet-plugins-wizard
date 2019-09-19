@@ -45,6 +45,13 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		private $defaults = null;
 
 		/**
+		 * Has registered external config
+		 *
+		 * @var boolean
+		 */
+		private $has_external = false;
+
+		/**
 		 * Get settings from array.
 		 *
 		 * @param  array  $settings Settings trail to get.
@@ -82,12 +89,46 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 		}
 
 		/**
+		 * Check if is kava theme
+		 *
+		 * @return boolean [description]
+		 */
+		public function is_kava() {
+
+			if ( ! $this->has_external() ) {
+				return false;
+			}
+
+			if ( empty( $this->external_settings['plugins']['get_from'] ) ) {
+				return false;
+			}
+
+			$plugins_url = $this->external_settings['plugins']['get_from'];
+
+			if ( false === strpos( $plugins_url, 'account.crocoblock.com' ) ) {
+				return false;
+			} else {
+				return true;
+			}
+
+		}
+
+		/**
 		 * Add new 3rd party configuration
 		 * @param  array  $config [description]
 		 * @return [type]         [description]
 		 */
 		public function register_external_config( $config = array() ) {
+			$this->has_external      = true;
 			$this->external_settings = array_merge( $this->external_settings, $config );
+		}
+
+		/**
+		 * Return external config status
+		 * @return boolean [description]
+		 */
+		public function has_external() {
+			return $this->has_external;
 		}
 
 		/**
@@ -146,6 +187,10 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 
 			$data = get_site_transient( $transient_key );
 
+			if ( $this->has_external() ) {
+				$data = false;
+			}
+
 			if ( ! $data ) {
 
 				$response = wp_remote_get( $url, array(
@@ -160,7 +205,9 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 					$data = array();
 				}
 
-				set_site_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+				if ( ! $this->has_external() ) {
+					set_site_transient( $transient_key, $data, 2 * DAY_IN_SECONDS );
+				}
 
 			}
 
