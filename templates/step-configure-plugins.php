@@ -25,7 +25,6 @@
 		}
 
 		$rest_plugins[ $slug ] = $plugin_data;
-
 	}
 
 	if ( ! empty( $required_plugins ) ) {
