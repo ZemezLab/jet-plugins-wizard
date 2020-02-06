@@ -112,7 +112,7 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Settings' ) ) {
 			if ( null !== $this->all_settings ) {
 				return $this->all_settings;
 			}
-
+			$this->has_external      = true;
 			$settings = $this->external_settings;
 
 			$all_settings = array(
