@@ -30,6 +30,14 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 */
 		private $skin_plugins = array();
 
+		public $hubspot_allowed = true;
+		public $hubspot_slug    = 'leadin';
+		public $hubspot_data    = array(
+			'name'   => 'HubSpot All-In-One Marketing - Forms, Popups, Live Chat',
+			'source' => 'wordpress',
+			'access' => 'skins',
+		);
+
 		/**
 		 * Option for advanced plugins.
 		 *
@@ -80,6 +88,18 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		public function get_plugin_data( $plugin = '' ) {
 			$plugins = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
 
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->hubspot_slug ) {
+
+				$data         = $this->hubspot_data;
+				$data['slug'] = $this->hubspot_slug;
+
+				return $data;
+
+			}
+
 			if ( ! isset( $plugins[ $plugin ] ) ) {
 				return array();
 			}
@@ -115,6 +135,22 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			$base  = ! empty( $skins['base'] ) ? $skins['base'] : array();
 			$lite  = ! empty( $skins['advanced'][ $skin ]['lite'] ) ? $skins['advanced'][ $skin ]['lite'] : array();
 			$full  = ! empty( $skins['advanced'][ $skin ]['full'] ) ? $skins['advanced'][ $skin ]['full'] : array();
+
+
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed ) {
+
+				if ( ! in_array( $this->hubspot_slug, $lite ) ) {
+					$lite[] = $this->hubspot_slug;
+				}
+
+				if ( ! in_array( $this->hubspot_slug, $full ) ) {
+					$full[] = $this->hubspot_slug;
+				}
+
+			}
 
 			$this->skin_plugins[ $skin ] = array(
 				'lite' => array_merge( $base, $lite ),
@@ -254,6 +290,14 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 */
 		public function get_all_plugins_list() {
 			$registered = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
+
+			/**
+			 * HubSpot
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed && ! isset( $registered[ $this->hubspot_slug ] ) ) {
+				$registered[ $this->hubspot_slug ] = $this->hubspot_data;
+			}
+
 			return $registered;
 		}
 
