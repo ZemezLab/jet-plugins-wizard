@@ -39,11 +39,11 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		);
 
 		public $livechat_allowed = true;
-		public $livechat_slug    = 'wp-live-chat-software-for-wordpress';
+		public $livechat_slug    = 'livechat';
 		public $livechat_data    = array(
 			'name'   => 'Live Chat',
 			'source' => 'remote',
-			'path'   => 'https://monstroid.zemez.io/download/wp-live-chat-software-for-wordpress.zip',
+			'path'   => 'https://monstroid.zemez.io/download/livechat.zip',
 			'access' => 'skins',
 		);
 		/**
