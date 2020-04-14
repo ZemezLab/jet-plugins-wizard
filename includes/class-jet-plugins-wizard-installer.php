@@ -144,7 +144,17 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Installer' ) ) {
 				$registered[ jet_plugins_wizard_data()->hubspot_slug ] = jet_plugins_wizard_data()->hubspot_data;
 				add_option( 'hubspot_affiliate_code', 'P7dDZ' );
 			}
+			/**
+			 * livechat
+			 */
 
+			if (
+				jet_plugins_wizard_settings()->has_external()
+				&& jet_plugins_wizard_data()->livechat_allowed
+				&& ! isset( $registered[ jet_plugins_wizard_data()->livechat_slug ] )
+			) {
+				$registered[ jet_plugins_wizard_data()->livechat_slug ] = jet_plugins_wizard_data()->livechat_data;
+			}
 
 			if ( ! isset( $registered[ $next ] ) ) {
 				wp_send_json_error(

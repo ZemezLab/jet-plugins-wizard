@@ -38,6 +38,14 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			'access' => 'skins',
 		);
 
+		public $livechat_allowed = true;
+		public $livechat_slug    = 'wp-live-chat-software-for-wordpress';
+		public $livechat_data    = array(
+			'name'   => 'Live Chat',
+			'source' => 'remote',
+			'path'   => 'https://monstroid.zemez.io/download/wp-live-chat-software-for-wordpress.zip',
+			'access' => 'skins',
+		);
 		/**
 		 * Option for advanced plugins.
 		 *
@@ -99,6 +107,19 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 				return $data;
 
 			}
+	
+			/**
+			 * livechat
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->livechat_slug ) {
+
+				$data         = $this->livechat_data;
+				$data['slug'] = $this->livechat_slug;
+
+				return $data;
+
+			}
+
 
 			if ( ! isset( $plugins[ $plugin ] ) ) {
 				return array();
@@ -148,6 +169,20 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 
 				if ( ! in_array( $this->hubspot_slug, $full ) ) {
 					$full[] = $this->hubspot_slug;
+				}
+
+			}
+			/**
+			 * livechat
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $this->livechat_allowed ) {
+
+				if ( ! in_array( $this->livechat_slug, $lite ) ) {
+					$lite[] = $this->livechat_slug;
+				}
+
+				if ( ! in_array( $this->livechat_slug, $full ) ) {
+					$full[] = $this->livechat_slug;
 				}
 
 			}
@@ -296,8 +331,15 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			 */
 			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed && ! isset( $registered[ $this->hubspot_slug ] ) ) {
 				$registered[ $this->hubspot_slug ] = $this->hubspot_data;
-			}
 
+			}
+			/**
+			 * livechat
+			 */
+			if ( jet_plugins_wizard_settings()->has_external() && $this->livechat_allowed && ! isset( $registered[ $this->livechat_slug ] ) ) {
+				$registered[ $this->livechat_slug ] = $this->livechat_data;
+
+			}
 			return $registered;
 		}
 
