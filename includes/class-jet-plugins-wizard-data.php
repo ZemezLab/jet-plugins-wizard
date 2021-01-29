@@ -30,22 +30,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		 */
 		private $skin_plugins = array();
 
-		public $hubspot_allowed = true;
-		public $hubspot_slug    = 'leadin';
-		public $hubspot_data    = array(
-			'name'   => 'HubSpot All-In-One Marketing - Forms, Popups, Live Chat',
-			'source' => 'wordpress',
-			'access' => 'skins',
-		);
-
-		public $livechat_allowed = true;
-		public $livechat_slug    = 'wp-live-chat-software-for-wordpress';
-		public $livechat_data    = array(
-			'name'   => 'Live Chat',
-			'source' => 'remote',
-			'path'   => 'https://monstroid.zemez.io/download/wp-live-chat-software-for-wordpress.zip',
-			'access' => 'skins',
-		);
 		/**
 		 * Option for advanced plugins.
 		 *
@@ -96,31 +80,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		public function get_plugin_data( $plugin = '' ) {
 			$plugins = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
 
-			/**
-			 * HubSpot
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->hubspot_slug ) {
-
-				$data         = $this->hubspot_data;
-				$data['slug'] = $this->hubspot_slug;
-
-				return $data;
-
-			}
-	
-			/**
-			 * livechat
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $plugin ===  $this->livechat_slug ) {
-
-				$data         = $this->livechat_data;
-				$data['slug'] = $this->livechat_slug;
-
-				return $data;
-
-			}
-
-
 			if ( ! isset( $plugins[ $plugin ] ) ) {
 				return array();
 			}
@@ -157,35 +116,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 			$lite  = ! empty( $skins['advanced'][ $skin ]['lite'] ) ? $skins['advanced'][ $skin ]['lite'] : array();
 			$full  = ! empty( $skins['advanced'][ $skin ]['full'] ) ? $skins['advanced'][ $skin ]['full'] : array();
 
-
-			/**
-			 * HubSpot
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed ) {
-
-				if ( ! in_array( $this->hubspot_slug, $lite ) ) {
-					$lite[] = $this->hubspot_slug;
-				}
-
-				if ( ! in_array( $this->hubspot_slug, $full ) ) {
-					$full[] = $this->hubspot_slug;
-				}
-
-			}
-			/**
-			 * livechat
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->livechat_allowed ) {
-
-				if ( ! in_array( $this->livechat_slug, $lite ) ) {
-					$lite[] = $this->livechat_slug;
-				}
-
-				if ( ! in_array( $this->livechat_slug, $full ) ) {
-					$full[] = $this->livechat_slug;
-				}
-
-			}
 
 			$this->skin_plugins[ $skin ] = array(
 				'lite' => array_merge( $base, $lite ),
@@ -326,20 +256,6 @@ if ( ! class_exists( 'Jet_Plugins_Wizard_Data' ) ) {
 		public function get_all_plugins_list() {
 			$registered = jet_plugins_wizard_settings()->get( array( 'plugins' ) );
 
-			/**
-			 * HubSpot
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->hubspot_allowed && ! isset( $registered[ $this->hubspot_slug ] ) ) {
-				$registered[ $this->hubspot_slug ] = $this->hubspot_data;
-
-			}
-			/**
-			 * livechat
-			 */
-			if ( jet_plugins_wizard_settings()->has_external() && $this->livechat_allowed && ! isset( $registered[ $this->livechat_slug ] ) ) {
-				$registered[ $this->livechat_slug ] = $this->livechat_data;
-
-			}
 			return $registered;
 		}
 
