@@ -108,8 +108,9 @@ class Jet_Plugins_Wizard_Plugin_Upgrader_Skin extends Plugin_Installer_Skin {
 	/**
 	 *
 	 * @param string $string
+	 * @param mixed  ...$args
 	 */
-	public function feedback( $string ) {
+	public function feedback( $string, ...$args ) {
 
 		if ( isset( $this->upgrader->strings[ $string ] ) )
 			$string = $this->upgrader->strings[ $string ];
